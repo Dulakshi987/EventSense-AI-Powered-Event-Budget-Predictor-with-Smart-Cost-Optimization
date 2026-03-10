@@ -1,0 +1,444 @@
+/* ====== Home.css ====== */
+
+/* ==============================
+   PAGE ROOT
+================================ */
+.event-sense-home {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #1a1408 0%, #2d2000 40%, #1a1a0e 75%, #0e0e06 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ---- background blobs ---- */
+.es-home-bg-glow {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.es-home-bg-glow--top {
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(201, 168, 76, 0.13) 0%, transparent 65%);
+    top: -220px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.es-home-bg-glow--bottom {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(201, 168, 76, 0.08) 0%, transparent 65%);
+    bottom: -160px;
+    right: -100px;
+}
+
+/* ---- dot grid texture ---- */
+.es-home-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(201, 168, 76, 0.055) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+}
+
+/* ==============================
+   CONTENT WRAPPER
+================================ */
+.es-home-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1060px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+}
+
+/* ==============================
+   HERO
+================================ */
+.es-home-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    text-align: center;
+}
+
+/* ---- eyebrow ---- */
+.es-home-eyebrow {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(201, 168, 76, 0.5);
+    margin-bottom: 28px;
+    animation: es-home-fade-up 0.6s ease 0.05s both;
+}
+
+/* ==============================
+   BRAND LETTER ANIMATION
+================================ */
+.es-home-brand-loader {
+    margin-bottom: 28px;
+    animation: es-home-fade-up 0.6s ease 0.15s both;
+}
+
+.es-home-loader-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 96px;
+    width: auto;
+    font-family: inherit;
+    font-size: 3.6rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    user-select: none;
+    color: #fff;
+    padding: 0 8px;
+}
+
+.es-home-loader-scan {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-color: transparent;
+    mask: repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 6px,
+            black 7px,
+            black 8px
+    );
+}
+
+.es-home-loader-scan::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+            radial-gradient(circle at 50% 50%, rgba(232, 202, 114, 0.9) 0%, transparent 50%),
+            radial-gradient(circle at 45% 45%, rgba(201, 168, 76, 0.8) 0%, transparent 45%),
+            radial-gradient(circle at 55% 55%, rgba(255, 220, 120, 0.7) 0%, transparent 45%),
+            radial-gradient(circle at 45% 55%, rgba(170, 130, 50, 0.7) 0%, transparent 45%),
+            radial-gradient(circle at 55% 45%, rgba(122, 92, 16, 0.8) 0%, transparent 45%);
+    mask: radial-gradient(
+            circle at 50% 50%,
+            transparent 0%,
+            transparent 10%,
+            black 25%
+    );
+    animation:
+            es-scan-transform 2s infinite alternate,
+            es-scan-opacity 4s infinite;
+    animation-timing-function: cubic-bezier(0.6, 0.8, 0.5, 1);
+}
+
+@keyframes es-scan-transform {
+    0%   { transform: translate(-55%); }
+    100% { transform: translate(55%);  }
+}
+
+@keyframes es-scan-opacity {
+    0%, 100% { opacity: 0; }
+    15%       { opacity: 1; }
+    65%       { opacity: 0; }
+}
+
+.es-home-loader-letter {
+    display: inline-block;
+    opacity: 0;
+    animation: es-letter-anim 4s infinite linear;
+    z-index: 2;
+    position: relative;
+}
+
+@keyframes es-letter-anim {
+    0%   { opacity: 0; }
+    5%   {
+        opacity: 1;
+        text-shadow: 0 0 8px rgba(201, 168, 76, 0.9), 0 0 24px rgba(201, 168, 76, 0.5);
+        transform: scale(1.08) translateY(-3px);
+    }
+    20%  { opacity: 0.3; }
+    100% { opacity: 0; }
+}
+
+/* ---- divider ---- */
+.es-home-divider {
+    width: 64px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+    border-radius: 2px;
+    margin: 0 auto 18px;
+    animation: es-home-fade-up 0.6s ease 0.25s both;
+}
+
+/* ---- tagline ---- */
+.es-home-tagline {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.38);
+    letter-spacing: 0.08em;
+    margin-bottom: 40px;
+    animation: es-home-fade-up 0.6s ease 0.3s both;
+}
+
+/* ---- trust strip ---- */
+.es-home-trust-strip {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(201, 168, 76, 0.15);
+    border-radius: 100px;
+    padding: 14px 32px;
+    animation: es-home-fade-up 0.6s ease 0.38s both;
+}
+
+.es-home-trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 0 28px;
+}
+
+.es-home-trust-num {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #c9a84c;
+    letter-spacing: -0.02em;
+}
+
+.es-home-trust-label {
+    font-size: 0.63rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.es-home-trust-sep {
+    width: 1px;
+    height: 32px;
+    background: rgba(201, 168, 76, 0.15);
+    flex-shrink: 0;
+}
+
+/* ==============================
+   CARDS SECTION
+================================ */
+.es-home-cards-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    animation: es-home-fade-up 0.6s ease 0.45s both;
+}
+
+.es-home-cards-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(201, 168, 76, 0.4);
+}
+
+.es-home-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    width: 100%;
+}
+
+/* ---- card ---- */
+.es-home-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1.5px solid rgba(201, 168, 76, 0.12);
+    border-radius: 24px;
+    padding: 32px 28px;
+    cursor: pointer;
+    transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s, background 0.25s;
+    position: relative;
+    overflow: hidden;
+}
+
+.es-home-card:hover,
+.es-home-card--active {
+    border-color: rgba(201, 168, 76, 0.45);
+    background: rgba(201, 168, 76, 0.06);
+    box-shadow:
+            0 0 0 1px rgba(201, 168, 76, 0.2),
+            0 8px 32px rgba(201, 168, 76, 0.18),
+            0 0 64px rgba(201, 168, 76, 0.08);
+    transform: translateY(-5px);
+}
+
+/* shine overlay */
+.es-home-card__shine {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.04) 0%,
+            transparent 50%,
+            rgba(201, 168, 76, 0.03) 100%
+    );
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.es-home-card:hover .es-home-card__shine,
+.es-home-card--active .es-home-card__shine {
+    opacity: 1;
+}
+
+/* icon */
+.es-home-card__icon-wrap {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: linear-gradient(145deg, #1a1408, #2d2000);
+    border: 1px solid rgba(201, 168, 76, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.es-home-card:hover .es-home-card__icon-wrap,
+.es-home-card--active .es-home-card__icon-wrap {
+    border-color: rgba(201, 168, 76, 0.5);
+    box-shadow: 0 0 20px rgba(201, 168, 76, 0.2);
+}
+
+/* heading */
+.es-home-card__heading {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+}
+
+/* desc */
+.es-home-card__desc {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.38);
+    line-height: 1.65;
+    margin-bottom: 0;
+}
+
+/* arrow */
+.es-home-card__arrow {
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(201, 168, 76, 0.6);
+    transition: color 0.2s, gap 0.2s;
+}
+
+.es-home-card:hover .es-home-card__arrow,
+.es-home-card--active .es-home-card__arrow {
+    color: #c9a84c;
+    gap: 10px;
+}
+
+.es-home-card__arrow-icon {
+    font-size: 1rem;
+    transition: transform 0.2s;
+}
+
+.es-home-card:hover .es-home-card__arrow-icon,
+.es-home-card--active .es-home-card__arrow-icon {
+    transform: translateX(3px);
+}
+
+/* ==============================
+   FOOTER
+================================ */
+.es-home-footer {
+    font-size: 0.72rem;
+    color: rgba(201, 168, 76, 0.25);
+    letter-spacing: 0.1em;
+    text-align: center;
+    animation: es-home-fade-up 0.6s ease 0.55s both;
+}
+
+/* ==============================
+   ANIMATIONS
+================================ */
+@keyframes es-home-fade-up {
+    0%   { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0);    }
+}
+
+/* ==============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+    .es-home-loader-wrapper {
+        font-size: 2.4rem;
+        height: 72px;
+    }
+
+    .es-home-trust-strip {
+        padding: 12px 16px;
+    }
+
+    .es-home-trust-item {
+        padding: 0 16px;
+    }
+
+    .es-home-content {
+        gap: 48px;
+    }
+}
+
+@media (max-width: 520px) {
+    .es-home-loader-wrapper {
+        font-size: 1.8rem;
+        height: 60px;
+    }
+
+    .es-home-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .es-home-trust-strip {
+        flex-direction: column;
+        border-radius: 20px;
+        gap: 12px;
+        padding: 20px 24px;
+    }
+
+    .es-home-trust-sep {
+        width: 40px;
+        height: 1px;
+    }
+}

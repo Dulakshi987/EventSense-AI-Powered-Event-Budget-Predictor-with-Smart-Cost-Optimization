@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Event Sense — Global Colour Palette
+   Colour custom properties only. No typography scale defined here.
+   ============================================================ */
+:root {
+    /* --- Primary Brand Colours --- */
+    --es-gold-primary: #C9A84C;
+    --es-gold-secondary: #E2BE6E;
+    --es-gold-light: #F5E4A8;
+    --es-gold-dark: #9A7A2A;
+    --es-gold-muted: #7A6030;
+
+    /* --- Black & Dark Shades --- */
+    --es-black-pure: #000000;
+    --es-black-primary: #0D0D0D;
+    --es-black-secondary: #1A1A1A;
+    --es-black-tertiary: #2A2A2A;
+    --es-black-soft: #3A3A3A;
+
+    /* --- White & Light Shades --- */
+    --es-white-pure: #FFFFFF;
+    --es-white-off: #FAFAFA;
+    --es-white-light: #F5F5F5;
+    --es-white-muted: #EBEBEB;
+
+    /* --- Neutral Greys --- */
+    --es-grey-100: #E8E8E8;
+    --es-grey-200: #D0D0D0;
+    --es-grey-300: #B0B0B0;
+    --es-grey-400: #888888;
+    --es-grey-500: #666666;
+    --es-grey-600: #444444;
+
+    /* --- Semantic Colours --- */
+    --es-success: #2A9D5C;
+    --es-warning: #E5A020;
+    --es-error: #D64045;
+    --es-info: #2A7AB8;
+
+    /* --- Surface & Background --- */
+    --es-bg-page: #FFFFFF;
+    --es-bg-surface: #FAFAFA;
+    --es-bg-overlay: rgba(0, 0, 0, 0.60);
+
+    /* --- Gradient Presets --- */
+    --es-gradient-gold: linear-gradient(135deg, #9A7A2A 0%, #C9A84C 50%, #E2BE6E 100%);
+    --es-gradient-dark: linear-gradient(135deg, #0D0D0D 0%, #2A2A2A 100%);
+    --es-gradient-gold-black: linear-gradient(135deg, #0D0D0D 0%, #9A7A2A 60%, #C9A84C 100%);
+
+    /* --- Border --- */
+    --es-border-gold: #C9A84C;
+    --es-border-subtle: #E8E8E8;
+    --es-border-dark: #2A2A2A;
+
+    /* --- Shadow --- */
+    --es-shadow-gold: 0 4px 24px rgba(201, 168, 76, 0.25);
+    --es-shadow-dark: 0 4px 24px rgba(0, 0, 0, 0.35);
+    --es-shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.08);
+}

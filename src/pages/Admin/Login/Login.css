@@ -1,0 +1,227 @@
+/* Login.css */
+
+.event-sense-login {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #f9fafb;
+}
+
+/* --- LEFT SIDE (Branding) --- */
+.es-login-left {
+  flex: 1.2;
+  position: relative;
+  background-color: #0f172a; /* Dark Blue/Black */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+/* Background Effects */
+.es-login-left__glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
+  top: -100px;
+  left: -100px;
+}
+
+.es-login-left__grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.es-login-left__body {
+  position: relative;
+  z-index: 10;
+  padding: 40px;
+  max-width: 500px;
+}
+
+.es-login-left__eyebrow {
+  color: #d4af37; /* Gold accent */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.es-login-left__brand {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.es-login-left__brand span {
+  color: #d4af37;
+}
+
+.es-login-left__tagline {
+  font-size: 1.2rem;
+  color: #94a3b8;
+}
+
+/* --- RIGHT SIDE (Form) --- */
+.es-login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 40px;
+}
+
+.es-login-right__inner {
+  width: 100%;
+  max-width: 400px;
+}
+
+.es-login-back-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 2.5rem;
+  transition: color 0.2s;
+}
+
+.es-login-back-link:hover {
+  color: #0f172a;
+}
+
+.es-login-right__header {
+  margin-bottom: 2rem;
+}
+
+.es-login-heading {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.es-login-sub-text {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+/* --- FORM STYLES --- */
+.es-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.es-login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.es-login-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.es-login-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.es-login-input-icon {
+  position: absolute;
+  left: 12px;
+  color: #94a3b8;
+  display: flex;
+}
+
+.es-login-input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.es-login-input:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.es-login-input-action {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+}
+
+.es-login-input-action:hover {
+  color: #64748b;
+}
+
+.es-login-submit-btn {
+  background-color: #0f172a;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 0.5rem;
+}
+
+.es-login-submit-btn:hover:not(:disabled) {
+  background-color: #1e293b;
+}
+
+.es-login-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.es-login-register-text {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.es-login-register-link {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.es-login-register-link:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .es-login-left {
+    display: none; /* පෝන් එකෙන් බලන විට වම් පැත්ත ඉවත් කරයි */
+  }
+  .es-login-right {
+    padding: 20px;
+  }
+}
